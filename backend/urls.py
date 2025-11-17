@@ -38,7 +38,10 @@ schema_view = get_schema_view(
    permission_classes=(permissions.AllowAny,),
 )
 
+from django.views.generic.base import RedirectView
+
 urlpatterns = [
+    path('', RedirectView.as_view(url='/swagger/', permanent=False)),
     path("admin/", admin.site.urls),
     path('api/', include('api.urls')),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
