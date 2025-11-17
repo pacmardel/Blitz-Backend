@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-zmv!bzd1qf%_hx=iqn2&4_%t9dnoq2tw6uc5!1g1js7-q4*v$+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['blitz-backend-w5oa.onrender.com']
 
 
 # Application definition
