@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: blitz-backend
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn backend.wsgi:application"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: blitz-db
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: WEB_CONCURRENCY
+        value: 4
+
+databases:
+  - name: blitz-db
+    databaseName: blitz
+    user: blitz
+    plan: free
